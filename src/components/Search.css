@@ -1,0 +1,16 @@
+#search {
+    height: 20px;
+    width: 400px;
+    border: 1px solid gray;
+    border-radius: 100px;
+    text-indent: 10px;
+  }
+
+  .search_bar {
+    height: 75px;
+    background: slategray;
+    margin-bottom: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
