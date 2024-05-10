@@ -1,3 +1,5 @@
+import "./Video.css"
+
 export default function Video({ video }) {
   const {
     videoThumb,
@@ -6,7 +8,7 @@ export default function Video({ video }) {
   } = video
   return (
     <article className="video-card">
-      <h2>{videoThumb}</h2>
+      <div className="video-thumb"></div>
       <h3>{title}</h3>
     </article>
   )
