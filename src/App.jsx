@@ -9,9 +9,8 @@ export default function App() {
   return (
     <>
     <header>
-     <Nav/>
-     <Search/>
-
+      <Nav/>
+      <Search/>
     </header>
     <main>
       <Home />
