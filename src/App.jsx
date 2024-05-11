@@ -1,9 +1,11 @@
-import { useState } from "react";
 import "./App.css";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom"
 import Nav from "./components/Nav.jsx";
 import Search from "./components/Search.jsx";
 import Home from "./components/Home.jsx"
 import VideoIndex from "./components/VideoIndex.jsx"
+import About from "./components/About.jsx"
 
 export default function App() {
   return (
@@ -13,8 +15,11 @@ export default function App() {
       <Search/>
     </header>
     <main>
-      <Home />
-      <VideoIndex />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/videos" element={<VideoIndex />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </main>
     </>
   );

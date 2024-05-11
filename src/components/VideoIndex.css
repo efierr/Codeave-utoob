@@ -1,3 +1,8 @@
+.video-page {
+  display: flex;
+  flex-direction: column;
+}
+
 .videos {
   display: flex;
   flex-wrap: wrap;
