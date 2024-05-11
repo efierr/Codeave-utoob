@@ -1,4 +1,4 @@
-import "./Video.css"
+import "./VideoListing.css"
 
 export default function VideoListing({ video }) {
   const {
