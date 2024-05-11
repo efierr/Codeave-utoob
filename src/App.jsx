@@ -6,6 +6,7 @@ import Search from "./components/Search.jsx";
 import Home from "./components/Home.jsx"
 import VideoIndex from "./components/VideoIndex.jsx"
 import About from "./components/About.jsx"
+import Footer from "./components/Footer.jsx";
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
       </Routes>
     </main>
+    <Footer />
     </>
   );
 }
-
