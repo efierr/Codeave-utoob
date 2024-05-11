@@ -1,6 +1,6 @@
 import"./VideoIndex.css"
 import { useState } from "react"
-import Video from "./component/Video.jsx"
+import Video from "./Video.jsx"
 
 export default function VideoIndex() {
   const [ videos, setVideos ] = useState([
