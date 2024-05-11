@@ -31,13 +31,17 @@ export default function VideoIndex() {
   ])
 
   return(
-    <section className="videos">
-      {videos.map((video) => (
-        <Video
+    <div className="viddeo-page">
+      <h2>Videos After Search</h2>
+      <section className="videos">
+        
+        {videos.map((video) => (
+          <Video
           video={video}
           key={video.id}
-        />
-      ))}
-    </section>
+          />
+        ))}
+      </section>
+    </div>
   )
 }
