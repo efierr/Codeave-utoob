@@ -1,15 +1,26 @@
 import "./VideoListing.css"
+import { Link } from "react-router-dom"
 
 export default function VideoListing({ video }) {
   const {
     id,
-    snippet: { title }
+    snippet: {
+      title,
+      thumbnails: {
+        maxres: {
+          url
+        }
+      }
+    }
   } = video
 
+
   return (
-    <article className="video-card">
-      <div className="video-thumb"></div>
-      <h3>{title}</h3>
-    </article>
+    <Link to={`/videos/${id}`} >
+      <article className="video-card">
+        <img src={url} className="video-thumb" />
+        <h3>{title}</h3>
+      </article>
+    </Link>
   )
 }

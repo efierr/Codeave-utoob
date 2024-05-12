@@ -1,10 +1,12 @@
 import"./VideoIndex.css"
 import { useState } from "react"
 import videoDB from "../utils/videoDB.json"
-import Video from "./VideoListing.jsx"
+import VideoListing from "./VideoListing.jsx"
 
 export default function VideoIndex() {
   const [ videos, setVideos ] = useState(videoDB.items)
+
+  console.log(videos[0])
 
   return(
     <div className="video-page">
@@ -12,9 +14,9 @@ export default function VideoIndex() {
       <section className="videos">
         
         {videos.map((video) => (
-          <Video
-          video={video}
-          key={video.id}
+          <VideoListing
+            video={video}
+            key={video.id}
           />
         ))}
       </section>
