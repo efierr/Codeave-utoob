@@ -4,12 +4,16 @@ import { DevTool } from "@hookform/devtools"
 
 export default function CommentForm() {
   const commentForm = useForm();
+  const { register, control, handleSubmit } = commentForm
 
-  const { register, control } = commentForm
+  function onSubmit(formData) {
+    // e.preventDefault()
+    console.log("Form Submitted", formData)
+  }
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label>Name
           <br />
           <input
