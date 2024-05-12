@@ -1,6 +1,17 @@
 import "./Video.css"
 
-export default function Video({ videoID }) {
+export default function Video({
+  videos,
+  videoMap,
+  videoID
+}) {
+
+  const {
+    snippet: {
+      title,
+      channelTitle
+    }
+  } = videos[videoMap[videoID]]
   
   return (
     <div className="video">
@@ -12,6 +23,9 @@ export default function Video({ videoID }) {
           allowFullScreen
           title="Embedded youtube"
         />
+        <h4>{title}</h4>
+        <h4>{channelTitle}</h4>
+
       </div>
   )
 }

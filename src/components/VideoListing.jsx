@@ -16,7 +16,6 @@ export default function VideoListing({ video }) {
     }
   } = video
 
-
   return (
     <article className="video-card">
         <img src={url} className="video-thumb" />

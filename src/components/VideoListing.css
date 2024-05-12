@@ -5,8 +5,9 @@
 }
 
 .video-card:hover {
-  background: rgb(149, 149, 149);
+  background: rgb(206, 206, 206);
   border-radius: 10px;
+  transform: scale(105%)
 }
 
 .video-card * {
