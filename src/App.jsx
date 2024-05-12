@@ -8,7 +8,6 @@ import VideoIndex from "./components/VideoIndex.jsx"
 import Video from "./components/VideoView.jsx"
 import About from "./components/About.jsx"
 import Footer from "./components/Footer.jsx";
-
 export default function App() {
   return (
     <>
@@ -16,8 +15,8 @@ export default function App() {
       <Nav/>
       <Search/>
     </header>
-    <main>
-      <Routes>
+    <main> 
+       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/videos" element={<VideoIndex />} />
         <Route path="/videos/:videoID" element={<Video />} />
