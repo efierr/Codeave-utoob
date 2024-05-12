@@ -5,7 +5,7 @@ import Nav from "./components/Nav.jsx";
 import Search from "./components/Search.jsx";
 import Home from "./components/Home.jsx"
 import VideoIndex from "./components/VideoIndex.jsx"
-import Video from "./components/VideoView.jsx"
+import VideoView from "./components/VideoView.jsx"
 import About from "./components/About.jsx"
 import Footer from "./components/Footer.jsx";
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/videos" element={<VideoIndex />} />
-        <Route path="/videos/:videoID" element={<Video />} />
+        <Route path="/videos/:videoID" element={<VideoView />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </main>

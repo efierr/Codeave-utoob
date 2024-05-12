@@ -1,7 +1,7 @@
 import "./VideoView.css"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
-import commentDB from "../util/commentDB.json"
+import commentDB from "../utils/commentDB.json"
 import Video from "./Video.jsx"
 import CommentForm from "./CommentForm.jsx"
 import Comments from "./Comments.jsx"
@@ -9,8 +9,6 @@ import Comments from "./Comments.jsx"
 export default function VideoView() {
   const { videoID } = useParams()
   const [ comments, setComments ] = useState(commentDB[videoID] || [])
-  
-  console.log(comments)
 
   return (
     <section className="video-view">

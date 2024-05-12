@@ -43,7 +43,6 @@ export default function CommentForm({
   }
 
   useEffect (() => {
-    console.log("use effect")
     if (isSubmitSuccessful) {
       reset()
     }

@@ -2,7 +2,6 @@ import "./Video.css"
 
 export default function Video({ videoID }) {
   
-  console.log(videoID)
   return (
     <div className="video">
         <iframe
