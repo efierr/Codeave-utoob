@@ -6,8 +6,6 @@ import UserComment from "./UserComment.jsx"
 export default function Comments({ videoID }) {
   const [ comments, setComments ] = useState(commentDB[videoID])
 
-  console.log(comments)
-
   return (
     <section className="comments">
       {comments.map(comment =>
