@@ -1,6 +1,7 @@
 import "./VideoView.css"
 import { useParams } from "react-router-dom"
 import Video from "./Video.jsx"
+import CommentForm from "./CommentForm.jsx"
 
 export default function VideoView() {
   
@@ -10,7 +11,7 @@ export default function VideoView() {
     <section className="video-view">
       <Video videoID={videoID}/>
       <div className="comment-section">
-        <h3>Comment Form</h3>
+        <CommentForm />
         <h3>Comments</h3>
       </div>
     </section>
