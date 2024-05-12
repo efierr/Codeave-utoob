@@ -3,13 +3,19 @@ import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { DevTool } from "@hookform/devtools"
 
-export default function CommentForm() {
+export default function CommentForm({
+  videoID,
+  comments,
+  setComments
+}) {
   const commentForm = useForm({
     defaultValues: {
       username: "",
-      commentText: ""
+      commentText: "",
+      commentID: ""
     }
   });
+
   const {
     register,
     control,
@@ -18,14 +24,18 @@ export default function CommentForm() {
     reset
   } = commentForm
 
-  console.log(formState)
-
   const {
+    errors,
     isSubmitSuccessful
   } = formState
 
   function onSubmit(formData) {
     console.log("Form Submitted", formData)
+    setComments([...comments, {...formData, [formData.commentID]: generateRandomID()}])
+  }
+
+  function generateRandomID() {
+    return String(Math.floor(Math.random()*9999)).padStart(4,"0")
   }
 
   function onError(errors) {
