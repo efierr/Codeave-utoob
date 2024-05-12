@@ -3,11 +3,15 @@ import { useForm } from "react-hook-form"
 import { DevTool } from "@hookform/devtools"
 
 export default function CommentForm() {
-  const commentForm = useForm();
+  const commentForm = useForm({
+    defaultValues: {
+      username: "",
+      commentText: ""
+    }
+  });
   const { register, control, handleSubmit } = commentForm
 
   function onSubmit(formData) {
-    // e.preventDefault()
     console.log("Form Submitted", formData)
   }
 
@@ -20,6 +24,7 @@ export default function CommentForm() {
             type="text"
             id="username"
             {...register("username")}
+            required
             />
         </label>
 
@@ -27,8 +32,9 @@ export default function CommentForm() {
           <br />
           <input
             type="text"
-            id="comment"
-            {...register("comment")}
+            id="commentText"
+            {...register("commentText")}
+            required
             />
         </label>
 
