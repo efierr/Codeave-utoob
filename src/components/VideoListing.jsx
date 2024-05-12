@@ -1,11 +1,11 @@
-import "./Video.css"
+import "./VideoListing.css"
 
-export default function Video({ video }) {
+export default function VideoListing({ video }) {
   const {
-    videoThumb,
-    title,
-    id
+    id,
+    snippet: { title }
   } = video
+
   return (
     <article className="video-card">
       <div className="video-thumb"></div>
