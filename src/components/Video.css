@@ -1,5 +1,8 @@
 .video {
-  width: 853px;
-  aspect-ratio: 16/9;
-  background: slategray;
+  width: fit-content;
+  height: fit-content;
+}
+
+iframe {
+  border: none;
 }
