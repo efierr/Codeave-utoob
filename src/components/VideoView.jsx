@@ -9,8 +9,6 @@ import Comments from "./Comments.jsx"
 export default function VideoView() {
   const { videoID } = useParams()
   const [ comments, setComments ] = useState(commentDB[videoID] || [])
-  
-  console.log(comments)
 
   return (
     <section className="video-view">

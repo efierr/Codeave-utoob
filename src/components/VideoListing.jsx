@@ -6,6 +6,8 @@ export default function VideoListing({ video }) {
     id,
     snippet: {
       title,
+      channelTitle,
+      channelId,
       thumbnails: {
         maxres: {
           url
@@ -16,11 +18,13 @@ export default function VideoListing({ video }) {
 
 
   return (
-    <Link to={`/videos/${id}`} >
-      <article className="video-card">
+    <article className="video-card">
         <img src={url} className="video-thumb" />
-        <h3>{title}</h3>
+        <div className="listing-details">
+          <h4>{title}</h4>
+          <a className="channel-title" href={`www.youtube.com/@${channelTitle}`} target="_blank" >{channelTitle}</a>
+        </div>
+        <Link to={`/videos/${id}`} className="card-link" />
       </article>
-    </Link>
   )
 }
