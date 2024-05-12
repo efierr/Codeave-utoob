@@ -1,5 +1,6 @@
 .video-card {
-  width: 300;
+  width: 300px;
+  height: fit-content;
   border: 1px solid black;
 }
 
@@ -7,4 +8,8 @@
   width: 300px;
   aspect-ratio: 16/9;
   background: slategray;
+}
+
+h3 {
+  text-wrap: wrap;
 }

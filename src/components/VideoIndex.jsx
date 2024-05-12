@@ -1,37 +1,13 @@
 import"./VideoIndex.css"
 import { useState } from "react"
-import Video from "./Video.jsx"
+import db from "../utils/db.json"
+import Video from "./VideoListing.jsx"
 
 export default function VideoIndex() {
-  const [ videos, setVideos ] = useState([
-    {
-      "videoThumb": "Video Thumb",
-      "title": "Title",
-      "duration": "3:57",
-      "id": 1
-    },
-    {
-      "videoThumb": "Video Thumb",
-      "title": "Title",
-      "duration": "5:25",
-      "id": 2
-    },
-    {
-      "videoThumb": "Video Thumb",
-      "title": "Title",
-      "duration": "10:26",
-      "id": 3
-      },
-      {
-      "videoThumb": "Video Thumb",
-      "title": "Title",
-      "duration": "8:26",
-      "id": 4
-      },
-  ])
+  const [ videos, setVideos ] = useState(db.items)
 
   return(
-    <div className="viddeo-page">
+    <div className="video-page">
       <h2>Videos After Search</h2>
       <section className="videos">
         
