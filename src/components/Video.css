@@ -1,0 +1,8 @@
+.video {
+  width: fit-content;
+  height: fit-content;
+}
+
+iframe {
+  border: none;
+}
