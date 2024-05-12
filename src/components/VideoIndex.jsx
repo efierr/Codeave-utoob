@@ -1,10 +1,10 @@
 import"./VideoIndex.css"
 import { useState } from "react"
-import db from "../utils/db.json"
+import videoDB from "../utils/videoDB.json"
 import Video from "./VideoListing.jsx"
 
 export default function VideoIndex() {
-  const [ videos, setVideos ] = useState(db.items)
+  const [ videos, setVideos ] = useState(videoDB.items)
 
   return(
     <div className="video-page">
