@@ -25,16 +25,19 @@ export default function App() {
     </header>
     <main> 
        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/videos" element={<VideoIndex
-          videos={videos} />} />
+        <Route path="/"
+          element={<VideoIndex
+            videos={videos} />}
+        />
         <Route path="/videos/:videoID"
           element={<VideoView
             videos={videos}
             videoMap={videoMap}
           />}
         />
-        <Route path="/about" element={<About />} />
+        <Route path="/about"
+          element={<About />}
+        />
       </Routes>
     </main>
     <Footer />
