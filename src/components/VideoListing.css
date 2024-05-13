@@ -1,12 +1,17 @@
 .video-card {
   width: 300px;
   height: fit-content;
-  position: relative
+  border-radius: 10px;
+  position: relative;
+  transition-duration: 500ms;
+  transition-property: transform, background;
 }
 
 .video-card:hover {
   background: rgb(149, 149, 149);
   border-radius: 10px;
+  cursor: pointer;
+  transform: scale(102%)
 }
 
 .video-card * {
@@ -22,6 +27,7 @@
 .listing-details {
   padding: 0 10px;
 }
+
 h3 {
   text-wrap: wrap;
 }
