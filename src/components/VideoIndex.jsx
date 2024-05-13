@@ -8,7 +8,6 @@ export default function VideoIndex() {
 
   return(
     <div className="video-page">
-      <h2>Videos After Search</h2>
       <section className="videos">
         
         {videos.map((video) => (
