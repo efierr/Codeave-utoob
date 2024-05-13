@@ -6,13 +6,20 @@ import Video from "./Video.jsx"
 import CommentForm from "./CommentForm.jsx"
 import Comments from "./Comments.jsx"
 
-export default function VideoView() {
+export default function VideoView({
+  videos,
+  videoMap
+}) {
   const { videoID } = useParams()
   const [ comments, setComments ] = useState(commentDB[videoID] || [])
 
   return (
     <section className="video-view">
-      <Video videoID={videoID}/>
+      <Video
+        videos={videos}
+        videoMap={videoMap}
+        videoID={videoID}
+        />
       <div className="comment-section">
         <CommentForm
           videoID={videoID}
