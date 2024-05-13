@@ -1,8 +1,10 @@
 .video {
   width: fit-content;
   height: fit-content;
+  margin-bottom: 20px;
 }
 
 iframe {
   border: none;
+  border-radius: 10px;
 }
