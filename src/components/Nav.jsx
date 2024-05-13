@@ -6,7 +6,6 @@ export default function Nav() {
   return (
     <nav>
       <Link to="/">Home</Link>
-      <Link to="/videos">Videos</Link>
       <Link to="/about" >About us</Link>
     </nav>
   );
