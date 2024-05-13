@@ -3,12 +3,12 @@
   height: fit-content;
   border-radius: 10px;
   position: relative;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-property: transform, background;
 }
 
 .video-card:hover {
-  background: rgb(149, 149, 149);
+  background: rgb(234, 234, 234);
   border-radius: 10px;
   cursor: pointer;
   transform: scale(102%)
