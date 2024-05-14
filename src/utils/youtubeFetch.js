@@ -4,7 +4,7 @@ const URL = "https://www.googleapis.com/youtube/v3/videos"
 
 // get 20 most played
 export function getMostPlayed() {
-  const query = "part=snippet&chart=mostPopular&maxResults=20&regionCode=US" 
+  const query = "part=snippet&part=statistics&chart=mostPopular&maxResults=20&regionCode=US" 
   return fetch(`${URL}?${query}&key=${acApiKey}`)
     .then(response => response.json())
 }

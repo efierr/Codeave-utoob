@@ -33,6 +33,14 @@ h3 {
   text-wrap: wrap;
 }
 
+/* a{
+  width: 300px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+} */
+
 .channel-title {
   color: black;
   text-decoration: none;
