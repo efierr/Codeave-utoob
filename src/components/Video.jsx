@@ -38,7 +38,7 @@ export default function Video({
         title="Embedded youtube"
       />
       <h4>{title}</h4>
-      <h4>{channelTitle} {publishDate}</h4>
+      <h4>{channelTitle} ● {publishDate}</h4>
     </div>
   )
 }

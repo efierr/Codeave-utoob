@@ -4,17 +4,11 @@ import { Link } from "react-router-dom"
 export default function VideoListing({ video }) {
   const {
     id,
-    snippet: {
-      title,
-      channelTitle,
-      channelId,
-      thumbnails: {
-        standard: {
-          url
-        }
-      }
-    }
+    snippet
   } = video
+
+  const { title, channelTitle, channelId, thumbnails } = snippet
+  const url = thumbnails?.maxres?.url || thumbnails.standard.url
 
   return (
     <article className="video-card">
