@@ -4,7 +4,7 @@ footer {
     bottom: 0;
     color: black;
     background: red;
-    position: fixed;
+    position: static;
     text-align: center;
     align-items: center;
   }
