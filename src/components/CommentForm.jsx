@@ -49,7 +49,7 @@ export default function CommentForm({
   }, [ isSubmitSuccessful ])
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit(onSubmit, onError)}>
         <label>Name
           <br />
@@ -75,6 +75,6 @@ export default function CommentForm({
 
       </form>
       <DevTool control={control} />
-    </>
+    </div>
   )
 }
