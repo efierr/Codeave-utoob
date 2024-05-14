@@ -27,6 +27,10 @@ export default function Video({
     day: 'numeric',
   }
   const publishDate = new Date(publishedAt).toLocaleDateString(undefined, options) 
+  const description = video.snippet?.description
+  function decode_utf8(s) {
+    return decodeURIComponent(s);
+  }
 
   return (
     <div className="video">
@@ -39,6 +43,7 @@ export default function Video({
       />
       <h4>{title}</h4>
       <h4>{channelTitle} ● {publishDate}</h4>
+      {/* <p>{decode_utf8(description)}</p> */}
     </div>
   )
 }

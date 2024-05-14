@@ -61,12 +61,13 @@ export default function CommentForm({
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit, onError)}>
-        <label>Name
+        <label>Username
           <br />
           <input
             type="text"
             id="username"
             {...register("username")}
+            placeholder="Add your username..."
             required
             />
         </label>

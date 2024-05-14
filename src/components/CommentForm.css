@@ -16,6 +16,10 @@ input:focus {
   border-bottom: 2px solid red;
 }
 
+#username {
+  width: 30%;
+}
+
 #commentText {
   width: 100%;
 }
