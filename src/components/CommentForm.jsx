@@ -2,9 +2,11 @@ import "./CommentForm.css"
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { DevTool } from "@hookform/devtools"
+import { addComment } from "../utils/mockApiFetch"
 
 export default function CommentForm({
   videoID,
+  commentDB,
   comments,
   setComments
 }) {
@@ -29,9 +31,15 @@ export default function CommentForm({
     isSubmitSuccessful
   } = formState
 
-  function onSubmit(formData) {
-    console.log("Form Submitted", formData)
-    setComments([...comments, {...formData, [formData.commentID]: generateRandomID()}])
+  function onSubmit(comment) {
+
+    const commentWID = {...comment, ["commentID"]: generateRandomID() } // add random ID to user's comment
+    const updatedComments = [...comments, commentWID] // add the users comment to video's comments
+    const updatedCommentDB = {...commentDB, [videoID]: updatedComments} // make a new copy of commentDB with new property
+
+    addComment(updatedCommentDB)
+      .then(res => console.log(res))
+      .catch(err => console.error(err))
   }
 
   function generateRandomID() {

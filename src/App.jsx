@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom"
-import { getMostPlayed } from "./utils/fetch.js"
+import { getMostPlayed } from "./utils/youtubeFetch.js"
 import videoDB from "./utils/videoDB.json"
 import Nav from "./components/Nav.jsx";
 import Search from "./components/Search.jsx";
