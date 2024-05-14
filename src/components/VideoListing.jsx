@@ -10,7 +10,6 @@ export default function VideoListing({ video }) {
   const { title, channelTitle, channelId, thumbnails } = snippet
   const url = thumbnails?.maxres?.url || thumbnails.standard.url
 
-
   return (
     <article className="video-card">
       <img src={url} className="video-thumb" />
