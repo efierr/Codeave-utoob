@@ -16,13 +16,17 @@ export default function Video({
       })
   },[])
 
-  
-  // const { title, channelTitle } = video.snippet?
+    // const { title, channelTitle } = video.snippet?
   const title = video.snippet?.title
   const channelTitle = video.snippet?.channelTitle
   const publishedAt = video.snippet?.publishedAt
-  console.log(`publishedAt`,publishedAt)
-  
+  const options = {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }
+  const publishDate = new Date(publishedAt).toLocaleDateString(undefined, options) 
 
   return (
     <div className="video">
@@ -34,7 +38,7 @@ export default function Video({
         title="Embedded youtube"
       />
       <h4>{title}</h4>
-      <h4>{channelTitle}</h4>
+      <h4>{channelTitle} {publishDate}</h4>
     </div>
   )
 }
