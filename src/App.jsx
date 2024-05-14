@@ -1,6 +1,7 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom"
+import { getMostPlayed } from "./utils/fetch.js"
 import videoDB from "./utils/videoDB.json"
 import Nav from "./components/Nav.jsx";
 import Search from "./components/Search.jsx";
@@ -11,11 +12,25 @@ import About from "./components/About.jsx"
 import Footer from "./components/Footer.jsx";
 
 const videoMap = {};
-videoDB.items
-  .forEach(({id}, idx) => videoMap[id] = idx)
+function indexVideos(arr) {
+  arr
+    .forEach(({id}, idx) => videoMap[id] = idx)
+}
 
 export default function App() {
-  const [ videos, setVideos ] = useState(videoDB.items)
+  const [ videos, setVideos ] = useState([])
+
+  useEffect(() => {
+    if (!videos.length) {
+      getMostPlayed()
+      .then(data => {
+        setVideos(data.items)
+      })
+      .catch(err => console.error(err))
+    }
+  }, [])
+  
+  indexVideos(videos)
 
   return (
     <>
