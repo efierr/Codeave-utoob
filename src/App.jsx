@@ -11,26 +11,20 @@ import VideoView from "./components/VideoView.jsx"
 import About from "./components/About.jsx"
 import Footer from "./components/Footer.jsx";
 
-const videoMap = {};
-function indexVideos(arr) {
-  arr
-    .forEach(({id}, idx) => videoMap[id] = idx)
-}
-
 export default function App() {
   const [ videos, setVideos ] = useState([])
+  const [ videoMap, setVideoMap ] = useState({})
 
   useEffect(() => {
     if (!videos.length) {
       getMostPlayed()
       .then(data => {
         setVideos(data.items)
+        setVideoMap(indexVideos(data.items))
       })
       .catch(err => console.error(err))
     }
   }, [])
-  
-  indexVideos(videos)
 
   return (
     <>
@@ -58,4 +52,11 @@ export default function App() {
     <Footer />
     </>
   );
+}
+
+// helper - index videos
+function indexVideos(arr) {
+  const indexedVideos = {}
+  arr.forEach(({id}, idx) => indexedVideos[id] = idx)
+  return indexedVideos
 }
