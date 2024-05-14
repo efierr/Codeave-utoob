@@ -2,20 +2,19 @@
 const SECRET = import.meta.env.VITE_MOCKAPI_SECRET
 const URL = `https://${SECRET}.mockapi.io/db/comments`
 
-// create video comment list for video
-export async function createVideoCommentList(videoID) {
-
-  let commentsDB = await fetch(URL)
+// get comment database
+export function getCommentDB () {
+  return fetch(URL)
     .then(response => response.json())
-    .then(data => {
-      return data
-    })
-    .catch(err => console.log(err))
+}
+
+// create video comment list for video
+export function createVideoCommentList(commentDB, videoID) {
 
   const options = {
     method: "PUT",
     headers: {'content-type':'application/json'},
-    body: JSON.stringify({...commentsDB, [videoID]: []})
+    body: JSON.stringify({...commentDB, [videoID]: []})
   }
 
   return fetch(URL, options)
@@ -24,15 +23,11 @@ export async function createVideoCommentList(videoID) {
         return response.json()
       }
     })
+    // .then(res => console.log(res))
+    .catch(err => console.error(err))
 }
 
-// get comments for video
-
-export function getComments () {
-  return fetch(URL)
-    .then(response => response.json())
-}
-
+// addComment
 export function addComment(updatedCommentDB) {
 
   const options = {

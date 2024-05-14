@@ -40,6 +40,8 @@ export default function CommentForm({
     addComment(updatedCommentDB)
       .then(res => console.log(res))
       .catch(err => console.error(err))
+
+    setComments(updatedComments)
   }
 
   function generateRandomID() {

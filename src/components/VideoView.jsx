@@ -1,7 +1,7 @@
 import "./VideoView.css"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { createVideoCommentList, getComments } from "../utils/mockApiFetch.js"
+import { getCommentDB, createVideoCommentList } from "../utils/mockApiFetch.js"
 import commentDB from "../utils/commentDB.json"
 import Video from "./Video.jsx"
 import CommentForm from "./CommentForm.jsx"
@@ -16,19 +16,16 @@ export default function VideoView({
   const [ comments, setComments ] = useState(commentDB[videoID] || [])
 
   useEffect(() => {
-    getComments()
+    getCommentDB()
       .then(commentDB => {
+        if (!commentDB[videoID]) {
+          createVideoCommentList(commentDB, videoID)
+        }
         setCommentDB(commentDB)
         setComments(commentDB[videoID] || [])
       })
       .catch(err => console.log(err))
-
-    if (!comments.length) {
-      createVideoCommentList(videoID)
-        .then(res => console.log(res))
-        .catch(err => console.error(err))
-    }
-  }, [videoID])
+  }, [])
 
   return (
     <section className="video-view">
