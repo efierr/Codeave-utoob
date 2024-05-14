@@ -77,11 +77,12 @@ export default function CommentForm({
             type="text"
             id="commentText"
             {...register("commentText")}
+            placeholder="Add a comment..."
             required
             />
         </label>
 
-        <button>Submit</button>
+        <button>Comment</button>
 
       </form>
       {/* <DevTool control={control} /> */}
