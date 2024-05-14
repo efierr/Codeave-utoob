@@ -15,17 +15,15 @@ export default function Video({
   
   return (
     <div className="video">
-        <iframe
-          width="853"
-          height="480"
-          src={`https://www.youtube.com/embed/${videoID}`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Embedded youtube"
-        />
-        <h4>{title}</h4>
-        <h4>{channelTitle}</h4>
-
-      </div>
+      <iframe
+        src={`https://www.youtube.com/embed/${videoID}`}
+        align="center"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="Embedded youtube"
+      />
+      <h4>{title}</h4>
+      <h4>{channelTitle}</h4>
+    </div>
   )
 }
