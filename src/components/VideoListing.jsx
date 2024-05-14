@@ -9,7 +9,7 @@ export default function VideoListing({ video }) {
       channelTitle,
       channelId,
       thumbnails: {
-        maxres: {
+        standard: {
           url
         }
       }
