@@ -61,12 +61,13 @@ export default function CommentForm({
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit, onError)}>
-        <label>Name
+        <label>Username
           <br />
           <input
             type="text"
             id="username"
             {...register("username")}
+            placeholder="Add your username..."
             required
             />
         </label>
@@ -77,14 +78,15 @@ export default function CommentForm({
             type="text"
             id="commentText"
             {...register("commentText")}
+            placeholder="Add a comment..."
             required
             />
         </label>
 
-        <button>Submit</button>
+        <button>Comment</button>
 
       </form>
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </div>
   )
 }

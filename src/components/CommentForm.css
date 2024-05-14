@@ -1,9 +1,35 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
+input{
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid black;
+  transition: border-bottom 250ms ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid red;
+}
+
+#username {
+  width: 30%;
+}
+
+#commentText {
+  width: 100%;
+}
+
+
 button {
+  font-weight: bold;
   width: fit-content;
+  padding: 5px 20px;
+  border: 1px solid black;
+  border-radius: 50px;
+  align-self: end;
 }
