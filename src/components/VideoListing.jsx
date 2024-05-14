@@ -1,14 +1,21 @@
 import "./VideoListing.css"
 import { Link } from "react-router-dom"
 
-export default function VideoListing({ video }) {
+export default function VideoListing({ video, minLikes }) {
   const {
     id,
-    snippet
+    snippet,
+    statistics: { likeCount }
   } = video
 
   const { title, channelTitle, channelId, thumbnails } = snippet
   const url = thumbnails?.maxres?.url || thumbnails.standard.url
+  const rating = Math.floor(likeCount / minLikes)
+  const fire  = "🔥".repeat(rating)
+  let fireDisplay = fire
+  if (rating > 5) {
+    fireDisplay = `🔥 X ${rating}`
+  }
 
   return (
     <article className="video-card">
@@ -23,7 +30,7 @@ export default function VideoListing({ video }) {
           className="channel-title"
           href={`www.youtube.com/@${channelTitle}`}
           target="_blank"
-        >{channelTitle}</a>
+        >{channelTitle} ● {fireDisplay}</a>
       </div>
       <Link to={`/videos/${id}`} className="card-link" />
     </article>
