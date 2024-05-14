@@ -38,7 +38,7 @@ export default function CommentForm({
     const updatedCommentDB = {...commentDB, [videoID]: updatedComments} // make a new copy of commentDB with new property
 
     addComment(updatedCommentDB)
-      .then(res => console.log(res))
+      .then(res => res)
       .catch(err => console.error(err))
 
     setComments(updatedComments)

@@ -25,7 +25,7 @@ export default function VideoView({
         setComments(commentDB[videoID] || [])
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [videoID])
 
   return (
     <section className="video-view">

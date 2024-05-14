@@ -8,3 +8,10 @@ export function getMostPlayed() {
   return fetch(`${URL}?${query}&key=${acApiKey}`)
     .then(response => response.json())
 }
+
+// get video
+export function getVideo(videoID) {
+  const query=`part=snippet&id=${videoID}`
+  return fetch(`${URL}?${query}&key=${acApiKey}`)
+    .then(response => response.json())
+}
