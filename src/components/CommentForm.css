@@ -4,6 +4,22 @@ form {
   gap: 20px;
 }
 
+#username {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+#commentText {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+#commentText:focus, #username:focus {
+  outline: none;
+  border-bottom: 2px solid red;
+}
+
 button {
   width: fit-content;
 }

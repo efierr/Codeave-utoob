@@ -84,7 +84,7 @@ export default function CommentForm({
         <button>Submit</button>
 
       </form>
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </div>
   )
 }
