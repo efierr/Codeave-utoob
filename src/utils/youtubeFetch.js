@@ -15,3 +15,12 @@ export function getVideo(videoID) {
   return fetch(`${URL}?${query}&key=${acApiKey}`)
     .then(response => response.json())
 }
+
+//search for videos
+export function searchForVideos(q) {
+  const ytURL = "https://youtube.googleapis.com/youtube/v3/"
+  const query = 'search?part=snippet&type=video'
+  const encodedQ = encodeURIComponent(q)
+  return fetch(`${ytURL}${query}&q=${encodedQ}&key=${acApiKey}`)
+    .then(response => response.json())
+}
